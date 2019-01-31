@@ -1,0 +1,27 @@
+<section class="grid-container">
+
+  <mat-toolbar color="primary" class="header" role="heading" flexLayout>
+        <button fxHide.gt-sm mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+        <ls-framework-header></ls-framework-header>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="content-container" [style.marginTop.px]=70>
+
+    <mat-sidenav fxHide.gt-sm #snav mode="side" class="side-nav"
+                 [fixedInViewport]=true fixedTopGap=70 fixedBottomGap=70>
+      <mat-nav-list>
+          <ng-container *ngFor="let item of configService.menuItems">
+              <ls-sidenav-item [item]="item" [depth]=0></ls-sidenav-item>
+          </ng-container>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="main-content">
+      <ls-framework-content></ls-framework-content>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+
+  <ls-framework-footer></ls-framework-footer>
+
+</section>
