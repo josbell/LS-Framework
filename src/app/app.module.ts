@@ -1,3 +1,5 @@
+import { UserService } from './app-services/user.service';
+import { UserApi } from 'src/ls/users/user-api';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -9,13 +11,19 @@ import { ScheduleComponent } from './schedule/schedule.component';
 import { LessonsComponent } from './lessons/lessons.component';
 import { ServicesComponent } from './services/services.component';
 import { RouterModule } from '@angular/router';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MyAccountComponent } from './my-account/my-account.component';
+import { AuthenticatedComponent } from './authenticated/authenticated.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ScheduleComponent,
     LessonsComponent,
-    ServicesComponent
+    ServicesComponent,
+    DashboardComponent,
+    MyAccountComponent,
+    AuthenticatedComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +32,7 @@ import { RouterModule } from '@angular/router';
     BrowserAnimationsModule,
     LsModule
   ],
-  providers: [],
+  providers: [{provide: UserApi, useExisting: UserService}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

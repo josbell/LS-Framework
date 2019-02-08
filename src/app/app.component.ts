@@ -17,7 +17,8 @@ export class AppComponent {
         {text: 'Schedule', route: '/schedule', icon: 'group'},
         {text: 'Lessons', route: '/lessons', icon: 'person'},
           // submenu: [{text: 'Item4', route: '.', icon: 'recent_actors'}, {text: 'Item5', route: '.', icon: 'star_rate'}]},
-        {text: 'Services', route: '/services', icon: 'feedback'}
+        {text: 'Services', route: '/services', icon: 'feedback'},
+        {text: 'My Account', route: '/authenticated/myaccount', icon: 'account_circle'}
       ],
       socialIcons: [
         {imageFile: 'assets/social_media_icons/facebook.svg', alt: 'Facebook', link: 'http://www.facebook.com'},
