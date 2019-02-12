@@ -11,8 +11,8 @@
       </button>
       <mat-menu #sub_menu="matMenu">
         <ng-container *ngFor="let item of configService.menuItems">
-          <button *ngFor="let subItem of item.submenu" [routerLink]="item.route" mat-menu-item>
-            <mat-icon *ngIf="item.icon" class="routeIcon">{{item.icon}}</mat-icon>
+          <button *ngFor="let subItem of item.submenu" [routerLink]="subItem.route" mat-menu-item>
+            <mat-icon *ngIf="subItem.icon" class="routeIcon">{{subItem.icon}}</mat-icon>
             {{subItem.text}}</button>
         </ng-container>
       </mat-menu>

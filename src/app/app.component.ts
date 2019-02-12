@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'DanceStudio';
+  title = 'Dance Studio';
 
   constructor(configService: FrameworkConfigService) {
     const frameworkConfig: FrameworkConfigSettings = {
@@ -16,9 +16,14 @@ export class AppComponent {
       menuItems: [
         {text: 'Schedule', route: '/schedule', icon: 'group'},
         {text: 'Lessons', route: '/lessons', icon: 'person'},
-          // submenu: [{text: 'Item4', route: '.', icon: 'recent_actors'}, {text: 'Item5', route: '.', icon: 'star_rate'}]},
         {text: 'Services', route: '/services', icon: 'feedback'},
-        {text: 'My Account', route: '/authenticated/myaccount', icon: 'account_circle'}
+        {text: 'My Account', route: '/myaccount', icon: 'account_circle',
+          submenu: [
+            { text: 'Profile', route: '/myaccount/profile', icon: 'recent_actors'},
+            { text: 'Subscriptions', route: '/myaccount/subscription', icon: 'star_rate'},
+            { text: 'Teams', route: '/myaccount/teams', icon: 'group'},
+            { text: 'Notifications', route: '/myaccount/notifications', icon: 'notifications'}]
+        }
       ],
       socialIcons: [
         {imageFile: 'assets/social_media_icons/facebook.svg', alt: 'Facebook', link: 'http://www.facebook.com'},

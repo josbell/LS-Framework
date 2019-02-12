@@ -1,20 +1,21 @@
 import { UserInfo } from './../../ls/model';
 import { Injectable } from '@angular/core';
 import { UserApi } from 'src/ls/users/user-api';
-import { of } from 'rxjs';
-import { delay } from 'rxjs/internal/operators';
+import { of, throwError } from 'rxjs';
+import { delay, flatMap } from 'rxjs/internal/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService implements UserApi {
-  isLoggedIn = false;
+  isLoggedIn = true;
   constructor() { }
 
   signIn(username: string, password: string, rememberMe: boolean) {
     console.log(username, password, rememberMe);
     this.isLoggedIn = true;
     return of(true).pipe(delay(2000));
+    // return of({}).pipe(delay(2000), flatMap(x => throwError('Invalid User Name and/or Password')));
   }
 
   signOut() {

@@ -1,5 +1,6 @@
 import { FrameworkConfigService } from './../framework-config.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'ls-framework-body',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FrameworkBodyComponent implements OnInit {
   constructor(public configService: FrameworkConfigService) { }
-  ngOnInit() {
-  }
+
+  ngOnInit() {}
 
 }

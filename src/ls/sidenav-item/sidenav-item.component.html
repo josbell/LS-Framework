@@ -10,6 +10,6 @@
 </a>
 <div *ngIf="expanded">
       <ng-container *ngFor="let subItem of item.submenu">
-          <ls-sidenav-item [item]="subItem" [depth]="depth+1"></ls-sidenav-item>
+          <ls-sidenav-item [item]="subItem" [depth]="depth+1" (closeMenu)="onCloseMenu()"></ls-sidenav-item>
       </ng-container>
 </div>

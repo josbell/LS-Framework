@@ -7,11 +7,11 @@
 
   <mat-sidenav-container class="content-container" [style.marginTop.px]=70>
 
-    <mat-sidenav fxHide.gt-sm #snav mode="side" class="side-nav"
+    <mat-sidenav fxHide.gt-sm #snav mode="side" class="side-nav" disableClose=false
                  [fixedInViewport]=true fixedTopGap=70 fixedBottomGap=70>
       <mat-nav-list>
           <ng-container *ngFor="let item of configService.menuItems">
-              <ls-sidenav-item [item]="item" [depth]=0></ls-sidenav-item>
+              <ls-sidenav-item [item]="item" [depth]=0 (closeMenu)='snav.close()'></ls-sidenav-item>
           </ng-container>
       </mat-nav-list>
     </mat-sidenav>

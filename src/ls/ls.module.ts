@@ -11,6 +11,9 @@ import { SocialMediaBarComponent } from './social-media-bar/social-media-bar.com
 import { MenuComponent } from './menu/menu.component';
 import { SidenavItemComponent } from './sidenav-item/sidenav-item.component';
 import { RouterModule } from '@angular/router';
+import { SignInComponent } from './users/sign-in/sign-in.component';
+import { RegisterComponent } from './users/register/register.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,17 +23,22 @@ import { RouterModule } from '@angular/router';
     FrameworkContentComponent,
     SocialMediaBarComponent,
     MenuComponent,
-    SidenavItemComponent
+    SidenavItemComponent,
+    SignInComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,
     FlexLayoutModule,
     MaterialModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   providers: [ FrameworkConfigService],
   exports: [
-    FrameworkBodyComponent
+    FrameworkBodyComponent,
+    SignInComponent,
+    MaterialModule
   ]
 })
 export class LsModule { }

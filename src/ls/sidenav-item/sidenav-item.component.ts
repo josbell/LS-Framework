@@ -1,5 +1,5 @@
 import { MenuItem } from './../model';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 
@@ -18,22 +18,26 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
   ]
 })
 export class SidenavItemComponent implements OnInit {
-  expanded: boolean;
+  expanded = false;
   @Input() item: MenuItem;
   @Input() depth: number;
-
+  @Output() closeMenu: EventEmitter<boolean> = new EventEmitter();
   constructor(public router: Router) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onItemSelected(item: MenuItem) {
     if (!item.submenu || !item.submenu.length) {
+      console.log(item);
+      this.onCloseMenu();
       this.router.navigate([item.route]);
     }
     if (item.submenu && item.submenu.length) {
       this.expanded = !this.expanded;
     }
   }
-
+  onCloseMenu = () => {
+    this.expanded = false;
+    this.closeMenu.emit(true);
+  }
 }

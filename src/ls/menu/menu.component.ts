@@ -1,5 +1,5 @@
 import { FrameworkConfigService } from './../framework-config.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'ls-menu',
