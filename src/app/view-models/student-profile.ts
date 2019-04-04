@@ -3,7 +3,7 @@ export interface StudentProfile {
   firstName: string;
   lastName: string;
   email: string;
-  username: string;
+  userName: string;
   password: string;
   birthday: Date;
   membership: string;

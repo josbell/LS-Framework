@@ -15,9 +15,12 @@
           <div id="rememberMe">
               <mat-checkbox ngModel name="rememberme">Remember me</mat-checkbox>
           </div>
-          <div id="buttons" fxLayout fxLayoutAlign="space-between center">
+          <div *ngIf="!submitting" id="buttons" fxLayout fxLayoutAlign="space-between center">
               <button id="register" matInput type="button" mat-raised-button routerLink="/register">Register</button>
               <button id="submit" matInput type="submit" mat-raised-button color="accent">Sign In</button>
+          </div>
+          <div *ngIf="submitting" id="buttons" fxLayout>
+              <p>Signing In...</p>
           </div>
       </form>
     </mat-card-content>

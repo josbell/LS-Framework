@@ -19,10 +19,10 @@ export class AppComponent {
         {text: 'Services', route: '/services', icon: 'feedback'},
         {text: 'My Account', route: '/myaccount', icon: 'account_circle',
           submenu: [
-            { text: 'Profile', route: '/myaccount/profile', icon: 'recent_actors'},
-            { text: 'Subscriptions', route: '/myaccount/subscription', icon: 'star_rate'},
-            { text: 'Teams', route: '/myaccount/teams', icon: 'group'},
-            { text: 'Notifications', route: '/myaccount/notifications', icon: 'notifications'}]
+            { text: 'Profile', route: '/myaccount/profile/view', icon: 'recent_actors'},
+            { text: 'Subscriptions', route: '/myaccount/subscription/view', icon: 'star_rate'},
+            { text: 'Teams', route: '/myaccount/teams/view', icon: 'group'},
+            { text: 'Notifications', route: '/myaccount/notifications/view', icon: 'notifications'}]
         }
       ],
       socialIcons: [

@@ -9,17 +9,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-
+  submitting = false;
+  serverError = '';
   constructor(public userApi: UserApi,
     private router: Router) { }
 
   ngOnInit() {}
 
   onSubmit(form: NgForm) {
+    this.submitting = true;
     this.userApi.register(form.value)
       .subscribe(
         data => this.router.navigate(['/']),
-        err => console.log(err)
+        err => {
+          this.submitting = false;
+          console.log(err);
+        }
       );
   }
 

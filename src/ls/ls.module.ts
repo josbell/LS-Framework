@@ -1,3 +1,4 @@
+import { DynamicFormComponent } from './dynamic-forms/dynamic-form/dynamic-form.component';
 import { FrameworkConfigService } from './framework-config.service';
 import { MaterialModule } from './material/material.module';
 import { NgModule } from '@angular/core';
@@ -14,6 +15,8 @@ import { RouterModule } from '@angular/router';
 import { SignInComponent } from './users/sign-in/sign-in.component';
 import { RegisterComponent } from './users/register/register.component';
 import { FormsModule } from '@angular/forms';
+import { DynamicFieldComponent } from './dynamic-forms/dynamic-field/dynamic-field.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,18 +28,22 @@ import { FormsModule } from '@angular/forms';
     MenuComponent,
     SidenavItemComponent,
     SignInComponent,
-    RegisterComponent
+    RegisterComponent,
+    DynamicFormComponent,
+    DynamicFieldComponent
   ],
   imports: [
     CommonModule,
     FlexLayoutModule,
     MaterialModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ FrameworkConfigService],
   exports: [
     FrameworkBodyComponent,
+    DynamicFormComponent,
     SignInComponent,
     MaterialModule
   ]

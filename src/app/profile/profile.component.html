@@ -1,3 +1,9 @@
-<p>
-  profile works!
-</p>
+<div class="container" fxLayout fxLayoutAlign="center center">
+      <ls-dynamic-form
+        [viewModel]="profile"
+        [formFields]="fields"
+        [operation]="operation$ | async"
+        (update)="updateProfile($event)">
+      </ls-dynamic-form>
+</div>
+

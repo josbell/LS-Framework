@@ -25,14 +25,18 @@ const routes: Routes = [
     children: [
       { path: '', canActivateChild: [AuthGuardService],
       children: [
-        { path: 'profile', component: ProfileComponent},
-        { path: 'subscription', component: SubscriptionComponent},
-        { path: 'teams', component: TeamsComponent},
-        { path: 'notifications', component: NotificationsComponent}
+        { path: 'profile/:operation', component: ProfileComponent},
+        { path: 'profile', redirectTo: 'profile/view', pathMatch: 'full'},
+        { path: 'subscription/:operation', component: SubscriptionComponent},
+        { path: 'subscription', redirectTo: 'subscription/view', pathMatch: 'full'},
+        { path: 'teams/:operation', component: TeamsComponent},
+        { path: 'teams', redirectTo: 'teams/view', pathMatch: 'full'},
+        { path: 'notifications/:operation', component: NotificationsComponent},
+        { path: 'notifications', redirectTo: 'notifications/view', pathMatch: 'full'},
       ]}
     ]
   },
-  { path: '', component: DashboardComponent },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
 

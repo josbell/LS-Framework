@@ -17,8 +17,7 @@ export class MyAccountComponent implements OnInit {
   ];
   activeLink = this.links[0];
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 
 }

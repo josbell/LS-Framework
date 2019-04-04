@@ -23,10 +23,13 @@
             <input  matInput type="password" class="form-control" required name="password" autocomplete="current-password" placeholder="Password" ngModel #password="ngModel">
             <mat-error [hidden]="password.valid || password.pristine">Password is required</mat-error>
           </mat-form-field>
-          <div id="buttons" fxLayout fxLayoutAlign="space-between center">
+          <div *ngIf="!submitting" id="buttons" fxLayout fxLayoutAlign="space-between center">
               <button id="submit" matInput type="button" mat-raised-button routerLink="/signin">Sign In</button>
               <button id="register" matInput type="submit" mat-raised-button color="accent">Register</button>
           </div>
+          <div *ngIf="submitting" id="buttons" fxLayout>
+            <p>Registering...</p>
+        </div>
       </form>
     </mat-card-content>
   </mat-card>
